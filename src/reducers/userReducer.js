@@ -6,7 +6,6 @@ const userReducer = (state = userInitialState, action) => {
             return [].concat(action.payload)
         }
         default: {
-            // return [...state]
             return [].concat(state)
         }
     }

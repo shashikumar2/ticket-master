@@ -6,7 +6,6 @@ const employeeShowReducer = (state = employeeInitialState, action) => {
             return Object.assign({},action.payload)
         }
         default: {
-            // return [...state]
             return Object.assign({},state)
         }
     }

@@ -6,7 +6,6 @@ const departmentsGetReducer = (state = departmentsInitialState, action) => {
             return [].concat(action.payload)
         }
         default: {
-            // return [...state]
             return [].concat(state)
         }
     }

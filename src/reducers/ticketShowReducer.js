@@ -6,7 +6,6 @@ const ticketShowReducer = (state = ticketInitialState, action) => {
             return Object.assign({},action.payload)
         }
         default: {
-            // return [...state]
             return Object.assign({},state)
         }
     }

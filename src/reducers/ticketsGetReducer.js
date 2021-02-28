@@ -6,7 +6,6 @@ const ticketsReducer = (state = ticketsInitialState, action) => {
             return [].concat(action.payload)
         }
         default: {
-            // return [...state]
             return [].concat(state)
         }
     }

@@ -6,7 +6,6 @@ const departmentShowReducer = (state = departmentInitialState, action) => {
             return Object.assign({},action.payload)
         }
         default: {
-            // return [...state]
             return Object.assign({},state)
         }
     }

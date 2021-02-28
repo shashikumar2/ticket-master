@@ -6,7 +6,7 @@ const customerDeleteReducer = (state = customerInitialState, action) => {
             return [].concat(action.payload)
         }
         default: {
-            // return [...state]
+          
             return [].concat(state)
         }
     }

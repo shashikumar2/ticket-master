@@ -6,7 +6,6 @@ const customerShowReducer = (state = customerInitialState, action) => {
             return Object.assign({},action.payload)
         }
         default: {
-            // return [...state]
             return Object.assign({},state)
         }
     }
