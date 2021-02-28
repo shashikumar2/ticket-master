@@ -7,7 +7,7 @@ export const setUserLogin = () => {
 // async 
 export const startPostUserLogin = (userLoginData, redirectLogin) => {
     return (dispatch) => {
-        axios.post('http://dct-ticket-master.herokuapp.com/users/login', userLoginData)
+        axios.post('http://dct-tm.herokuapp.com/api/users/login', userLoginData)
             .then(response => {
                  console.log('userLoginAction', response.data)
                 const token = response.data 
@@ -27,7 +27,7 @@ export const setUserLogout = () => {
 
 export const startDeleteUserLogout = () => {
     return (dispatch) => {
-        axios.delete('http://dct-ticket-master.herokuapp.com/users/logout', {
+        axios.delete('http://dct-tm.herokuapp.com/api/users/logout', {
         headers : {
             'x-auth' : localStorage.getItem('token')
          }

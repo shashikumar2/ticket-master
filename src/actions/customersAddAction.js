@@ -1,6 +1,5 @@
 import axios from 'axios'
-//import { Redirect } from 'react-router-dom'
-//import {BrowserRouter,Redirect } from 'react-router-dom'
+
 // sync
 import {startGetCustomers} from '../actions/customersAction'
 export const setAddCustomers = (customers) => {
@@ -10,7 +9,7 @@ export const setAddCustomers = (customers) => {
 // async 
 export const startPostCustomers = (customersdata,redirect) => {
     return (dispatch) => {
-        axios.post('http://dct-ticket-master.herokuapp.com/customers', customersdata,{
+        axios.post('http://dct-tm.herokuapp.com/api/customers', customersdata,{
             headers : {
                 'x-auth' : localStorage.getItem('token')
             }
@@ -29,7 +28,7 @@ export const startPostCustomers = (customersdata,redirect) => {
 
 export const startPutCustomer = (customerId,customerdata,redirect) => {
     return (dispatch) => {
-        axios.put(`http://dct-ticket-master.herokuapp.com/customers/${customerId}`, customerdata,{
+        axios.put(`http://dct-tm.herokuapp.com/api/customers/${customerId}`, customerdata,{
             headers : {
                 'x-auth' : localStorage.getItem('token')
             }

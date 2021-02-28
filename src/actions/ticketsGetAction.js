@@ -8,7 +8,7 @@ export const setTickets = (tickets) => {
 // async 
 export const startGetTickets = () => {
     return (dispatch) => {
-        axios.get('http://dct-ticket-master.herokuapp.com/tickets', {
+        axios.get('http://dct-tm.herokuapp.com/api/tickets', {
             headers : {
                 'x-auth' : localStorage.getItem('token')
             }

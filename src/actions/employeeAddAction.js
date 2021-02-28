@@ -6,7 +6,7 @@ import {startGetEmployees} from '../actions/employeesGetAction'
 // async 
 export const startPostEmployee = (employeedata,redirect) => {
     return (dispatch) => {
-        axios.post('http://dct-ticket-master.herokuapp.com/employees', employeedata,{
+        axios.post('http://dct-tm.herokuapp.com/api/employees', employeedata,{
             headers : {
                 'x-auth' : localStorage.getItem('token')
             }
@@ -24,7 +24,7 @@ export const startPostEmployee = (employeedata,redirect) => {
 
 export const startPutEmployee = (employeeId, employeedata,redirect) => {
     return (dispatch) => {
-        axios.put(`http://dct-ticket-master.herokuapp.com/employees/${employeeId}`, employeedata,{
+        axios.put(`http://dct-tm.herokuapp.com/api/employees/${employeeId}`, employeedata,{
             headers : {
                 'x-auth' : localStorage.getItem('token')
             }

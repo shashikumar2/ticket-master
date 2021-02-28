@@ -1,6 +1,5 @@
 import axios from 'axios'
-//import { Redirect } from 'react-router-dom'
-//import {BrowserRouter,Redirect } from 'react-router-dom'
+
 // sync
 import {startGetDepartments} from '../actions/departmentsGetAction'
 export const setAddDepartment = (department) => {
@@ -10,7 +9,7 @@ export const setAddDepartment = (department) => {
 // async 
 export const startPostDepartment = (departmentdata) => {
     return (dispatch) => {
-        axios.post('http://dct-ticket-master.herokuapp.com/departments', departmentdata,{
+        axios.post('http://dct-tm.herokuapp.com/api/departments', departmentdata,{
             headers : {
                 'x-auth' : localStorage.getItem('token')
             }
@@ -29,7 +28,7 @@ export const startPostDepartment = (departmentdata) => {
 
 export const startPutDepartment = (departmentId, departmentdata, redirect) => {
     return (dispatch) => {
-        axios.put(`http://dct-ticket-master.herokuapp.com/departments/${departmentId}`, departmentdata,{
+        axios.put(`http://dct-tm.herokuapp.com/api/departments/${departmentId}`, departmentdata,{
             headers : {
                 'x-auth' : localStorage.getItem('token')
             }

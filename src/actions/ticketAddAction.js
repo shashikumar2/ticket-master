@@ -6,7 +6,7 @@ import {startGetTickets} from '../actions/ticketsGetAction'
 // async 
 export const startPostTicket = (ticketdata,redirect) => {
     return (dispatch) => {
-        axios.post('http://dct-ticket-master.herokuapp.com/tickets', ticketdata,{
+        axios.post('http://dct-tm.herokuapp.com/api/tickets', ticketdata,{
             headers : {
                 'x-auth' : localStorage.getItem('token')
             }
@@ -24,7 +24,7 @@ export const startPostTicket = (ticketdata,redirect) => {
 
 export const startPutTicket = (ticketId,ticketdata,redirect) => {
     return (dispatch) => {
-        axios.put(`http://dct-ticket-master.herokuapp.com/tickets/${ticketId}`, ticketdata,{
+        axios.put(`http://dct-tm.herokuapp.com/api/tickets/${ticketId}`, ticketdata,{
             headers : {
                 'x-auth' : localStorage.getItem('token')
             }
@@ -42,7 +42,7 @@ export const startPutTicket = (ticketId,ticketdata,redirect) => {
 
 export const startPutTicketCompleted = (ticketId,ticketdata) => {
     return (dispatch) => {
-        axios.put(`http://dct-ticket-master.herokuapp.com/tickets/${ticketId}`, ticketdata,{
+        axios.put(`http://dct-tm.herokuapp.com/api/tickets/${ticketId}`, ticketdata,{
             headers : {
                 'x-auth' : localStorage.getItem('token')
             }

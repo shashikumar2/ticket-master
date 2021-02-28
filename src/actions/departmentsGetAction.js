@@ -8,7 +8,7 @@ export const setGetDepartments = (departments) => {
 // async 
 export const startGetDepartments = () => {
     return (dispatch) => {
-        axios.get('http://dct-ticket-master.herokuapp.com/departments', {
+        axios.get('http://dct-tm.herokuapp.com/api/departments', {
             headers : {
                 'x-auth' : localStorage.getItem('token')
             }

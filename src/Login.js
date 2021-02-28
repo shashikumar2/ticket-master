@@ -30,9 +30,7 @@ class Register extends React.Component{
         return this.props.history.push('/')
     }
     
-     this.props.dispatch(startPostUserLogin(this.state,redirectLogin))
-     
-    
+     this.props.dispatch(startPostUserLogin(this.state,redirectLogin))    
 }
 
 

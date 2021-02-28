@@ -1,6 +1,5 @@
 import axios from 'axios'
-//import { Redirect } from 'react-router-dom'
-//import {BrowserRouter,Redirect } from 'react-router-dom'
+
 // sync
 import {startGetCustomers} from '../actions/customersAction'
 
@@ -12,7 +11,7 @@ export const setDeleteCustomer = (customer) => {
 export const startDeleteCustomer = (customerId) => {
     return (dispatch) => {
         console.log('custdelAction',customerId)
-        axios.delete(`http://dct-ticket-master.herokuapp.com/customers/${customerId}`, {
+        axios.delete(`http://dct-tm.herokuapp.com/api/customers/${customerId}`, {
             headers : {
                 'x-auth' : localStorage.getItem('token')
             }

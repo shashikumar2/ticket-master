@@ -109,11 +109,7 @@ const mapStateToProps = (state) => {
         customer: state.customer,
         department: state.department,
         employee : state.employee,
-        ticket : state.ticket
-
-
-        
-        
+        ticket : state.ticket        
     }
 }
 export default connect(mapStateToProps)(App)

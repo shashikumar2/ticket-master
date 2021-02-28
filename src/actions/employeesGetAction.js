@@ -8,7 +8,7 @@ export const setEmployees = (employees) => {
 // async 
 export const startGetEmployees = () => {
     return (dispatch) => {
-        axios.get('http://dct-ticket-master.herokuapp.com/employees', {
+        axios.get('http://dct-tm.herokuapp.com/api/employees', {
             headers : {
                 'x-auth' : localStorage.getItem('token')
             }

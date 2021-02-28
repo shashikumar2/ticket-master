@@ -1,6 +1,5 @@
 import axios from 'axios'
-//import { Redirect } from 'react-router-dom'
-//import {BrowserRouter,Redirect } from 'react-router-dom'
+
 // sync
 import {startGetDepartments} from '../actions/departmentsGetAction'
 
@@ -10,7 +9,7 @@ import {startGetDepartments} from '../actions/departmentsGetAction'
 export const startDeleteDepartment = (departmentId) => {
     return (dispatch) => {
         console.log('deptdelAction',departmentId)
-        axios.delete(`http://dct-ticket-master.herokuapp.com/departments/${departmentId}`, {
+        axios.delete(`http://dct-tm.herokuapp.com/api/departments/${departmentId}`, {
             headers : {
                 'x-auth' : localStorage.getItem('token')
             }

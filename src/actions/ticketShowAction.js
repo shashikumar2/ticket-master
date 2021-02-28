@@ -1,6 +1,5 @@
 import axios from 'axios'
-//import { Redirect } from 'react-router-dom'
-//import {BrowserRouter,Redirect } from 'react-router-dom'
+
 // sync
 import {startGetTickets} from '../actions/ticketsGetAction'
 
@@ -12,7 +11,7 @@ export const setShowTicket = (ticket) => {
 export const startShowTicket = (ticketId, redirect) => {
     return (dispatch) => {
         console.log('ticketShowAction',ticketId)
-        axios.get(`http://dct-ticket-master.herokuapp.com/tickets/${ticketId}`, {
+        axios.get(`http://dct-tm.herokuapp.com/api/tickets/${ticketId}`, {
             headers : {
                 'x-auth' : localStorage.getItem('token')
             }
