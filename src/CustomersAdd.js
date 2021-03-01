@@ -30,11 +30,8 @@ class CustomersAdd extends React.Component{
         return this.props.history.push('/customers')
     }
      this.props.dispatch(startPostCustomers(this.state,redirect))
-     
     
 }
-
-
 
     render(){
         return (

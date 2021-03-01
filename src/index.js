@@ -9,23 +9,16 @@ import {startPostUser} from './actions/userAction'
 import {startGetCustomers} from './actions/customersAction'
 
 import {setUserLogin} from './actions/userLoginAction'
-//import {setUserLogout} from './actions/userLoginAction'
-
 
 import {startGetDepartments} from './actions/departmentsGetAction'
 import {startGetEmployees} from './actions/employeesGetAction'
 import {startGetTickets} from './actions/ticketsGetAction'
 
-
-
-
 const store = configureStore() 
-//console.log(store.getState())
 
 store.subscribe(() => {
     console.log('index',store.getState())
 })
-
 
 store.dispatch(setUserLogin())
 store.dispatch(startGetCustomers())

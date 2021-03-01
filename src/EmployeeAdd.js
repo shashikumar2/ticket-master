@@ -25,7 +25,6 @@ class EmployeeAdd extends React.Component{
 
     handleSubmit = (e)=>{
      e.preventDefault()
-     //console.log(this.state)
     const redirect=()=>{
      
         return this.props.history.push('/employees')

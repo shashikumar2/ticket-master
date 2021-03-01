@@ -1,19 +1,11 @@
 import React from 'react'
-
 import { connect } from 'react-redux'
 import {startGetCustomers} from './actions/customersAction'
-
 import {startDeleteCustomer} from './actions/customerDeleteAction'
 import {startShowCustomer} from './actions/customerShowAction'
-
-
-
 import { Link } from 'react-router-dom'
 
-
 class Customers extends React.Component{
-
-
     componentDidMount() {  
         if (this.props.customers.length === 0) {
             this.props.dispatch(startGetCustomers())
@@ -72,14 +64,9 @@ class Customers extends React.Component{
         </table>
         
         <Link to={`/customers/new`} >Add Customer</Link> 
-
-
         </div>
     )
-
- }
-
-    
+ }    
 }
 const mapStateToProps = (state) => {
     return {

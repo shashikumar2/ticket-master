@@ -37,9 +37,8 @@ class TicketAdd extends React.Component{
         return this.props.history.push('/tickets')
     }
 
-    const customerTemp = this.props.customers.find(cust=> cust.name === this.state.customer)
+     const customerTemp = this.props.customers.find(cust=> cust.name === this.state.customer)
      const departmentTemp = this.props.departments.find(dept=> dept.name === this.state.department)
-     //console.log('departmentTemp',departmentTemp)
      const employees = this.props.employees.filter(emp => emp.department.name === this.state.department)
      const res =employees.map(emp=>emp._id)
          const result = []
@@ -48,8 +47,6 @@ class TicketAdd extends React.Component{
              result.push({"_id" : ele})
          }
             console.log('result', result)
-
-
 
     const ticketData ={
         "code" : this.state.code,
@@ -64,17 +61,9 @@ class TicketAdd extends React.Component{
     
 }
 
-
-
     render(){
-        console.log(this.state)
-        //const departmentTemp = this.props.departments.find(dept=> dept.name === this.state.department)
-      //  console.log('departmentTemp',departmentTemp)
-         const employees = this.props.employees.filter(emp => emp.department.name === this.state.department)
-         
-
-        // console.log('employees', employees)
-        // console.log('result', result)
+        console.log(this.state) 
+        const employees = this.props.employees.filter(emp => emp.department.name === this.state.department)        
         return (
             <div>
                 <h1> Add Ticket </h1>

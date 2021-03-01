@@ -6,9 +6,6 @@ import {Redirect } from 'react-router-dom'
 
 class EmployeeShow extends React.Component{
 
-
-
-
     render(){
         const tickets = this.props.tickets1.filter(tick => tick.employees[0]._id === this.props.employee._id)
         console.log('employShow', tickets)
@@ -67,16 +64,13 @@ class EmployeeShow extends React.Component{
 }
 
 const mapStateToProps = (state) => {
-    //console.log('maps', )
     return {
         
         employee: state.employee,
-
         tickets1: state.tickets,
         customers:state.customers,
         departments:state.departmentsGet,
         employees:state.employees,
-        
         
     }
 }

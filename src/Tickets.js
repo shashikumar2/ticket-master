@@ -7,10 +7,7 @@ import {startDeleteTicket} from './actions/ticketDeleteAction'
 import {startShowTicket} from './actions/ticketShowAction'
 import { startPutTicketCompleted } from './actions/ticketAddAction'
 
-
-
 import { Link } from 'react-router-dom'
-
 
 class Tickets extends React.Component{
     constructor(){
@@ -20,7 +17,6 @@ class Tickets extends React.Component{
 
                     }
                 }    
-
 
     componentDidMount() {  
         if (this.props.tickets.length === 0) {
@@ -128,9 +124,7 @@ class Tickets extends React.Component{
                        )
                    }) 
                 }
-                
-               
-              
+                              
             </tbody>
         </table>
         </div>
@@ -200,21 +194,15 @@ class Tickets extends React.Component{
 
         </div>
     )
-
- }
-
-    
+ }    
 }
 const mapStateToProps = (state) => {
     return {
         tickets:state.tickets,
         ticket : state.ticket,
-
         customers:state.customers,
         departments:state.departmentsGet,
-        employees:state.employees,
-        
-        
+        employees:state.employees,        
     }
 }
 

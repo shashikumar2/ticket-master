@@ -57,26 +57,21 @@ class DepartmentShow extends React.Component{
          }) 
        }
 
+        </div>
 
-            </div>
-
-               )
-           }
+        )
+    }
 
 }
 
 const mapStateToProps = (state) => {
-    //console.log('maps', )
-    return {
-        
+   
+    return {        
         department: state.department,
-
         tickets1: state.tickets,
         customers:state.customers,
         departments:state.departmentsGet,
-        employees:state.employees,
-        
-        
+        employees:state.employees,        
     }
 }
 

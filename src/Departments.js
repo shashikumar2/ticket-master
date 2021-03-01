@@ -15,8 +15,6 @@ class Departments extends React.Component{
         super()
         this.state= {
             name : ''
-            
-
         }
     }
 
@@ -35,10 +33,6 @@ class Departments extends React.Component{
     handleSubmit = (e)=>{
      e.preventDefault()
      console.log(this.state)
-    /*const redirect=()=>{
-     
-       // return this.props.history.push('/customers')
-    }*/
      this.props.dispatch(startPostDepartment(this.state))   
 }
 
@@ -64,9 +58,7 @@ class Departments extends React.Component{
                 <h2> Departments - {this.props.departments.length} </h2>
                 <table border='1' >
                    <thead>
-                    <tr>
-                    
-  
+                    <tr>  
                     </tr>
                    </thead>
 
@@ -91,10 +83,6 @@ class Departments extends React.Component{
             </tbody>
         </table>
 
-
-
-
-
                 <h3> Add Department </h3>
                 <form onSubmit = {this.handleSubmit}>
                     <label htmlFor= 'name'>Name</label>   
@@ -102,10 +90,7 @@ class Departments extends React.Component{
                     <br/>
                     <br/>
 
-                   
-
                     <input type ='submit' value='Add' />
-
                     </form>
                 </div>
         )
@@ -115,9 +100,7 @@ class Departments extends React.Component{
 const mapStateToProps = (state) => {
     return {
         departments:state.departmentsGet,
-        department:state.department
-        
-        
+        department:state.department        
     }
 }
 export default connect(mapStateToProps)(Departments)

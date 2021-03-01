@@ -6,9 +6,6 @@ import {Redirect } from 'react-router-dom'
 
 class TicketShow extends React.Component{
 
-
-
-
     render(){
         console.log("ticketShow",this.props.ticket)
         return (
@@ -18,14 +15,11 @@ class TicketShow extends React.Component{
 
                 <table border='1' >
                  <thead>
-                <tr>
-                    
-  
+                <tr>  
                 </tr>
                  </thead>
 
-                 <tbody>
-                
+                 <tbody>                
                             <tr >                                
                                 <td>Customer - {this.props.customers.find(cust=>cust._id ===this.props.ticket.customer).name}</td>
                             </tr> 
@@ -46,12 +40,9 @@ class TicketShow extends React.Component{
         </table>
 
                 <Link to={`/tickets/edit/${this.props.ticket._id}`} >Edit</Link> 
-
-
             </div>
-
-               )
-           }
+            )
+        }
 
 }
 
@@ -60,12 +51,10 @@ const mapStateToProps = (state) => {
     return {
         
         ticket: state.ticket,
-
         customers:state.customers,
         departments:state.departmentsGet,
         employees:state.employees,
-        
-        
+            
     }
 }
 

@@ -1,19 +1,11 @@
 import React from 'react'
-
 import { connect } from 'react-redux'
 import {startGetEmployees} from './actions/employeesGetAction'
-
 import {startDeleteEmployee} from './actions/employeeDeleteAction'
 import {startShowEmployee} from './actions/employeeShowAction'
-
-
-
 import { Link } from 'react-router-dom'
 
-
 class Employees extends React.Component{
-
-
     componentDidMount() {  
         if (this.props.employees.length === 0) {
             this.props.dispatch(startGetEmployees())

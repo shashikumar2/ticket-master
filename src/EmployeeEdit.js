@@ -25,7 +25,6 @@ class EmployeeEdit extends React.Component{
 
     handleSubmit = (e)=>{
         e.preventDefault()
-        //console.log(this.state)
        const redirect=()=>{
         
            return this.props.history.push(`/employees/${this.props.employee._id}`)
@@ -82,10 +81,10 @@ class EmployeeEdit extends React.Component{
                     </form>
                 
                 
-            </div>
+              </div>
 
-               )
-           }
+            )
+        }
 
 }
 

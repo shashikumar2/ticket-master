@@ -64,10 +64,8 @@ class CustomerEdit extends React.Component{
 }
 
 const mapStateToProps = (state) => {
-    return {
-       
-        customer:state.customer,
-            
+    return {       
+        customer:state.customer,            
     }
 }
 export default connect(mapStateToProps)(CustomerEdit)

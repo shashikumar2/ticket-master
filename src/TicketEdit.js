@@ -39,7 +39,6 @@ class TicketEdit extends React.Component{
 
     const customerTemp = this.props.customers.find(cust=> cust.name === this.state.customer)
      const departmentTemp = this.props.departments.find(dept=> dept.name === this.state.department)
-     //console.log('departmentTemp',departmentTemp)
      const employees = this.props.employees.filter(emp => emp.department.name === this.state.department)
      const res =employees.map(emp=>emp._id)
          const result = []
@@ -60,22 +59,11 @@ class TicketEdit extends React.Component{
         "message" :  this.state.message
     }
     console.log('ticketEdit', ticketData)
-     this.props.dispatch(startPutTicket(this.props.ticket._id, ticketData,redirect))
-     
-    
+     this.props.dispatch(startPutTicket(this.props.ticket._id, ticketData,redirect))    
 }
 
-
-
     render(){
-       // console.log(this.state)
-        //const departmentTemp = this.props.departments.find(dept=> dept.name === this.state.department)
-      //  console.log('departmentTemp',departmentTemp)
-         const employees = this.props.employees.filter(emp => emp.department.name === this.state.department)
-         
-
-        // console.log('employees', employees)
-        // console.log('result', result)
+        const employees = this.props.employees.filter(emp => emp.department.name === this.state.department)
         return (
             <div>
                 <h1> Edit Ticket </h1>

@@ -8,7 +8,6 @@ import CustomersAdd from './CustomersAdd'
 import CustomerShow from './CustomerShow'
 import CustomerEdit from './CustomerEdit'
 
-
 import Departments from './Departments'
 import DepartmentShow from './DepartmentShow'
 import DepartmentEdit from './DepartmentEdit'
@@ -18,19 +17,14 @@ import EmployeeAdd from './EmployeeAdd'
 import EmployeeShow from './EmployeeShow'
 import EmployeeEdit from './EmployeeEdit'
 
-
-
 import Tickets from './Tickets'
 import TicketAdd from './TicketAdd'
 import TicketShow from './TicketShow'
 import TicketEdit from './TicketEdit'
 
-
 import { startDeleteUserLogout } from './actions/userLoginAction'
 
-
 import {connect} from 'react-redux'
-
 import { BrowserRouter, Route, Link } from 'react-router-dom'
 
 function App(props) {
@@ -38,8 +32,6 @@ function App(props) {
     const handleLogout = () => {
         props.dispatch(startDeleteUserLogout())
     }
-
-
 
     return (
         <BrowserRouter>
