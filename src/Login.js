@@ -8,11 +8,9 @@ import {Redirect } from 'react-router-dom'
 class Register extends React.Component{
     constructor(){
         super()
-        this.state= {
-            
+        this.state= {            
             email : '',
             password : ''
-
         }
     }
 
@@ -24,15 +22,11 @@ class Register extends React.Component{
 
     handleSubmit = (e)=>{
      e.preventDefault()
-    const redirectLogin=()=>{
-     
+    const redirectLogin=()=>{     
         return this.props.history.push('/')
-    }
-    
+    }    
      this.props.dispatch(startPostUserLogin(this.state,redirectLogin))    
 }
-
-
 
     render(){
         return (

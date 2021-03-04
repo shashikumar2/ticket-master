@@ -29,9 +29,6 @@ class DepartmentEdit extends React.Component{
      this.props.dispatch(startPutDepartment(this.props.department._id, this.state, redirect))   
 }
 
-
-
-
     render(){
         return (
             <div>
@@ -42,11 +39,8 @@ class DepartmentEdit extends React.Component{
                     <br/>
                     <br/>
                     <input type ='submit' value='Add' />
-
-                    </form>
-                
+                    </form>                
             </div>
-
                )
            }
 

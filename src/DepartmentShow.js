@@ -2,18 +2,13 @@ import React from 'react'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
 import { connect } from 'react-redux'
-import {Redirect } from 'react-router-dom'
 
 class DepartmentShow extends React.Component{
-
-
-
 
     render(){
         const tickets = this.props.tickets1.filter(tick => tick.department === this.props.department._id)
         return (
-            <div>
-                
+            <div>                
                 <h2> Name - {this.props.department.name} </h2>
                 <Link to={`/departments/edit/${this.props.department._id}`} >Edit</Link> 
 
@@ -21,15 +16,7 @@ class DepartmentShow extends React.Component{
                 {
                 tickets.map((ticket,i) =>{
                 return(
-
                 <table border='1' >
-                 <thead>
-                <tr>
-                    
-  
-                </tr>
-                 </thead>
-
                  <tbody>
                            <tr >                                
                                 <td>Code Number - {ticket.code}</td>
@@ -49,19 +36,15 @@ class DepartmentShow extends React.Component{
                             </tr>    
                             <tr >
                                 <td>Priority -  {ticket.priority}</td>                                                            
-                            </tr>                 
-                    
-            </tbody>
-        </table> 
-           )
-         }) 
-       }
-
-        </div>
-
+                            </tr>                                     
+                 </tbody>
+                </table> 
+               )
+               }) 
+               }
+            </div>
         )
     }
-
 }
 
 const mapStateToProps = (state) => {

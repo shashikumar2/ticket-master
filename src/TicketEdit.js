@@ -37,7 +37,7 @@ class TicketEdit extends React.Component{
         return this.props.history.push(`/tickets/${this.props.ticket._id}`)
     }
 
-    const customerTemp = this.props.customers.find(cust=> cust.name === this.state.customer)
+     const customerTemp = this.props.customers.find(cust=> cust.name === this.state.customer)
      const departmentTemp = this.props.departments.find(dept=> dept.name === this.state.department)
      const employees = this.props.employees.filter(emp => emp.department.name === this.state.department)
      const res =employees.map(emp=>emp._id)
@@ -47,8 +47,6 @@ class TicketEdit extends React.Component{
              result.push({"_id" : ele})
          }
             console.log('result', result)
-
-
 
     const ticketData ={
         "code" : this.state.code,
@@ -88,8 +86,6 @@ class TicketEdit extends React.Component{
                      <br/>
                      <br/>
 
-
-
                     <label htmlFor= 'department'>Department</label>   
                     <select  id ='department' name = 'department' value={this.state.department} onChange={this.handleChange}>
                         <option value =''>--select--</option>
@@ -120,13 +116,11 @@ class TicketEdit extends React.Component{
                      <br/>
                      <br/>
 
-
                      <label htmlFor= 'message'>Message</label>                      
                      <textarea id ='message' name ='message' value={this.state.message} onChange={this.handleChange}></textarea>
                      <br/>
                      <br/>
                       
-
                      <h3> Priority </h3>
                                     <input 
                                        type='radio'
@@ -166,7 +160,7 @@ class TicketEdit extends React.Component{
 
                     <input type ='submit' value='Submit' />
 
-                    </form>
+                </form>
                 </div>
         )
     }

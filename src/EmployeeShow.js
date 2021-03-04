@@ -1,8 +1,6 @@
 import React from 'react'
-import axios from 'axios'
 import {Link} from 'react-router-dom'
 import { connect } from 'react-redux'
-import {Redirect } from 'react-router-dom'
 
 class EmployeeShow extends React.Component{
 
@@ -20,19 +18,11 @@ class EmployeeShow extends React.Component{
                 tickets.map((ticket,i) =>{
                 return(
 
-                <table border='1' >
-                 <thead>
-                <tr>
-                    
-  
-                </tr>
-                 </thead>
-
+                <table border='1' >               
                  <tbody>
                            <tr >                                
                                 <td>Code Number - {ticket.code}</td>
-                            </tr> 
-                
+                            </tr>                 
                             <tr >                                
                                 <td>Customer - {this.props.customers.find(cust=>cust._id ===ticket.customer).name}</td>
                             </tr> 
@@ -47,20 +37,15 @@ class EmployeeShow extends React.Component{
                             </tr>    
                             <tr >
                                 <td>Priority -  {ticket.priority}</td>                                                            
-                            </tr>                 
-                    
-            </tbody>
-        </table> 
-           )
-         }) 
-       }
-
-
+                            </tr>                                     
+                  </tbody>
+                 </table> 
+                )
+                }) 
+                }
             </div>
-
-               )
+            )
            }
-
 }
 
 const mapStateToProps = (state) => {

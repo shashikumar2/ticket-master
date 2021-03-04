@@ -61,11 +61,6 @@ class CustomerShow extends React.Component{
                 return(
 
                 <table border='1' >
-                 <thead>
-                <tr>  
-                </tr>
-                 </thead>
-
                  <tbody>
                            <tr >                                
                                 <td>Code Number - {ticket.code}</td>

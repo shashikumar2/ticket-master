@@ -96,8 +96,7 @@ class Tickets extends React.Component{
                 </tr>
             </thead>
 
-            <tbody>
-               
+            <tbody>               
                 {
                    ticketsPending.map((ticket,i) =>{
                        return(
@@ -123,8 +122,7 @@ class Tickets extends React.Component{
                             </tr>                 
                        )
                    }) 
-                }
-                              
+                }                              
             </tbody>
         </table>
         </div>
@@ -148,8 +146,7 @@ class Tickets extends React.Component{
                 </tr>
             </thead>
 
-            <tbody>
-               
+            <tbody>               
                 {
                    ticketsCompleted.map((ticket,i) =>{
                        return(

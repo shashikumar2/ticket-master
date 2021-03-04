@@ -28,12 +28,8 @@ class Register extends React.Component{
      
         return this.props.history.push('/login')
     }
-     this.props.dispatch(startPostUser(this.state,redirect))
-     
-    
+     this.props.dispatch(startPostUser(this.state,redirect))    
 }
-
-
 
     render(){
         return (
@@ -57,8 +53,8 @@ class Register extends React.Component{
 
                     <input type ='submit' value='Register' />
 
-                    </form>
-                </div>
+                </form>
+            </div>
         )
     }
 }

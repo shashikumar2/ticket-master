@@ -57,8 +57,7 @@ class TicketAdd extends React.Component{
         "message" :  this.state.message
     }
      this.props.dispatch(startPostTicket(ticketData,redirect))
-     console.log('ticketData', ticketData)
-    
+     console.log('ticketData', ticketData)    
 }
 
     render(){
@@ -87,8 +86,6 @@ class TicketAdd extends React.Component{
                         </select>
                      <br/>
                      <br/>
-
-
 
                     <label htmlFor= 'department'>Department</label>   
                     <select  id ='department' name = 'department' value={this.state.department} onChange={this.handleChange}>
@@ -120,13 +117,11 @@ class TicketAdd extends React.Component{
                      <br/>
                      <br/>
 
-
                      <label htmlFor= 'message'>Message</label>                      
                      <textarea id ='message' name ='message' value={this.state.message} onChange={this.handleChange}></textarea>
                      <br/>
                      <br/>
                       
-
                      <h3> Priority </h3>
                                     <input 
                                        type='radio'
