@@ -1,9 +1,6 @@
 import React from 'react'
-import axios from 'axios'
-import {Link} from 'react-router-dom'
 import { connect } from 'react-redux'
 import { startPostCustomers } from './actions/customersAddAction'
-import {Redirect } from 'react-router-dom'
 
 class CustomersAdd extends React.Component{
     constructor(){

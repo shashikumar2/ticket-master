@@ -1,8 +1,5 @@
 import React from 'react'
-import axios from 'axios'
-import {Link} from 'react-router-dom'
 import { connect } from 'react-redux'
-import {Redirect } from 'react-router-dom'
 import { startPutCustomer } from './actions/customersAddAction'
 
 
@@ -54,18 +51,16 @@ class CustomerEdit extends React.Component{
 
                     <input type ='submit' value='Submit' />
 
-                    </form>
-                
+                    </form>                
             </div>
-
-               )
-           }
+            )
+    }
 
 }
 
 const mapStateToProps = (state) => {
     return {       
-        customer:state.customer,            
+        customer:state.customer           
     }
 }
 export default connect(mapStateToProps)(CustomerEdit)
