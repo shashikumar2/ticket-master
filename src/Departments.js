@@ -1,12 +1,7 @@
 import React from 'react'
-import axios from 'axios'
-import {Link} from 'react-router-dom'
 import { connect } from 'react-redux'
 import {startGetDepartments} from './actions/departmentsGetAction'
-
 import { startPostDepartment } from './actions/departmentAddAction'
-import {Redirect } from 'react-router-dom'
-
 import {startDeleteDepartment} from './actions/departmentDeleteAction'
 import {startShowDepartment} from './actions/departmentShowAction'
 
@@ -39,8 +34,8 @@ class Departments extends React.Component{
        handleShow = (id) =>{
             const redirect=()=>{     
             return this.props.history.push(`/departments/${this.props.department._id}`)
-        }
-        this.props.dispatch(startShowDepartment(id,redirect))
+            }
+            this.props.dispatch(startShowDepartment(id,redirect))
         }
 
         handleRemove = (id) =>{
@@ -56,10 +51,8 @@ class Departments extends React.Component{
                         {
                         this.props.departments.map((department,i) =>{
                             return(
-                                    <tr key={i}>
-                                        
-                                        <td> {department.name}</td>
-                                                                    
+                                    <tr key={i}>                                        
+                                        <td> {department.name}</td>                                                                    
                                         <td> { <button onClick={() => {
                                                         this.handleShow(department._id)
                                                             }} > Show</button>}</td>
@@ -79,10 +72,9 @@ class Departments extends React.Component{
                     <input type ='text' id ='name' name ='name' value = { this.state.name} onChange= {this.handleChange}/>
                     <br/>
                     <br/>
-
                     <input type ='submit' value='Add' />
-                    </form>
-                </div>
+                </form>
+            </div>
         )
     }
 }

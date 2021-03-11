@@ -1,10 +1,8 @@
 import React from 'react'
-import axios from 'axios'
 import {Link} from 'react-router-dom'
 import { connect } from 'react-redux'
 
 class DepartmentShow extends React.Component{
-
     render(){
         const tickets = this.props.tickets1.filter(tick => tick.department === this.props.department._id)
         return (
@@ -18,23 +16,22 @@ class DepartmentShow extends React.Component{
                 return(
                 <table border='1' >
                  <tbody>
-                           <tr >                                
+                           <tr>                                
                                 <td>Code Number - {ticket.code}</td>
-                            </tr> 
-                
-                            <tr >                                
+                            </tr>                 
+                            <tr>                                
                                 <td>Customer - {this.props.customers.find(cust=>cust._id ===ticket.customer).name}</td>
                             </tr> 
                             <tr> 
                                 <td>Department - {this.props.departments.find(dept=>dept._id ===ticket.department).name}</td>
                             </tr> 
-                            <tr >
+                            <tr>
                                 <td> Employees - {(this.props.employees.find(emp=>emp._id ===ticket.employees[0]._id)).name}</td> 
                             </tr>    
-                            <tr >
+                            <tr>
                                 <td>Message - {ticket.message}</td> 
                             </tr>    
-                            <tr >
+                            <tr>
                                 <td>Priority -  {ticket.priority}</td>                                                            
                             </tr>                                     
                  </tbody>
@@ -47,8 +44,7 @@ class DepartmentShow extends React.Component{
     }
 }
 
-const mapStateToProps = (state) => {
-   
+const mapStateToProps = (state) => {   
     return {        
         department: state.department,
         tickets1: state.tickets,
