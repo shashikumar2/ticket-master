@@ -1,9 +1,6 @@
 import React from 'react'
-import axios from 'axios'
-import {Link} from 'react-router-dom'
 import { connect } from 'react-redux'
 import { startPostEmployee } from './actions/employeeAddAction'
-import {Redirect } from 'react-router-dom'
 
 class EmployeeAdd extends React.Component{
     constructor(){
@@ -13,7 +10,6 @@ class EmployeeAdd extends React.Component{
             email : '',
             mobile : '',
             department :''
-
         }
     }
 
@@ -29,25 +25,19 @@ class EmployeeAdd extends React.Component{
      
         return this.props.history.push('/employees')
     }
-     const departmentTemp = this.props.departments.find(dept=> dept.name === this.state.department)
-     console.log('departmentTemp',departmentTemp)
+    const departmentTemp = this.props.departments.find(dept=> dept.name === this.state.department)
     const employeeData ={
         "name" : this.state.name,
         "email" : this.state.email,
         "mobile" : this.state.mobile,
         "department" : departmentTemp._id
     }
-     this.props.dispatch(startPostEmployee(employeeData,redirect))
-     
-    
+     this.props.dispatch(startPostEmployee(employeeData,redirect))    
 }
-
-
 
     render(){
         console.log(this.state.department)
         const departmentTemp = this.props.departments.find(dept=> dept.name === this.state.department)
-        console.log('departmentTemp',departmentTemp)
         return (
             <div>
                 <h1> Add Employee </h1>
@@ -91,10 +81,8 @@ class EmployeeAdd extends React.Component{
 }
 
 const mapStateToProps = (state) => {
-    return {
-        
-        departments:state.departmentsGet
-        
+    return {        
+        departments:state.departmentsGet        
     }
 }
 export default connect(mapStateToProps)(EmployeeAdd)

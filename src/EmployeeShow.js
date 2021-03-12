@@ -3,21 +3,17 @@ import {Link} from 'react-router-dom'
 import { connect } from 'react-redux'
 
 class EmployeeShow extends React.Component{
-
     render(){
         const tickets = this.props.tickets1.filter(tick => tick.employees[0]._id === this.props.employee._id)
         console.log('employShow', tickets)
         return (
-            <div>
-                
+            <div>                
                 <h3>{this.props.employee.name} - {this.props.employee.email} </h3>
                 <Link to={`/employees/edit/${this.props.employee._id}`} >Edit</Link> 
-
                 <h2>Tickets - {tickets.length} </h2>
                 {
                 tickets.map((ticket,i) =>{
                 return(
-
                 <table border='1' >               
                  <tbody>
                            <tr >                                
@@ -49,15 +45,12 @@ class EmployeeShow extends React.Component{
 }
 
 const mapStateToProps = (state) => {
-    return {
-        
+    return {        
         employee: state.employee,
         tickets1: state.tickets,
         customers:state.customers,
         departments:state.departmentsGet,
-        employees:state.employees,
-        
+        employees:state.employees,        
     }
 }
-
 export default connect(mapStateToProps)(EmployeeShow)

@@ -1,10 +1,6 @@
 import React from 'react'
-import axios from 'axios'
-import {Link} from 'react-router-dom'
 import { connect } from 'react-redux'
-import {Redirect } from 'react-router-dom'
 import { startPutEmployee } from './actions/employeeAddAction'
-
 
 class EmployeeEdit extends React.Component{
     constructor(props){
@@ -30,7 +26,6 @@ class EmployeeEdit extends React.Component{
            return this.props.history.push(`/employees/${this.props.employee._id}`)
        }
         const departmentTemp = this.props.departments.find(dept=> dept.name === this.state.department)
-        console.log('departmentTemp',departmentTemp)
        const employeeData ={
            "name" : this.state.name,
            "email" : this.state.email,
@@ -44,7 +39,7 @@ class EmployeeEdit extends React.Component{
     render(){
         return (
             <div>
-                     <h1> Edit Employee </h1>
+                <h1> Edit Employee </h1>
                 <form onSubmit = {this.handleSubmit}>
                     <label htmlFor= 'name'>Name</label>   
                     <input type ='text' id ='name' name ='name' value = { this.state.name} onChange= {this.handleChange}/>
@@ -66,26 +61,19 @@ class EmployeeEdit extends React.Component{
                         <option value =''>--select--</option>
                         {
                             this.props.departments.map(department=> {
-                                return(
-                            
+                                return(                            
                                  <option  value={department.name}>{department.name} </option>
                                 )
                            })
                         }
-                        </select>
+                    </select>
                      <br/>
                      <br/>
-
                     <input type ='submit' value='Submit' />
-
-                    </form>
-                
-                
+                    </form>                
               </div>
-
             )
         }
-
 }
 
 const mapStateToProps = (state) => {

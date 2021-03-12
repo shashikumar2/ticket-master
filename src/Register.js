@@ -1,9 +1,6 @@
 import React from 'react'
-import axios from 'axios'
-import {Link} from 'react-router-dom'
 import { connect } from 'react-redux'
 import { startPostUser } from './actions/userAction'
-import {Redirect } from 'react-router-dom'
 
 class Register extends React.Component{
     constructor(){
@@ -24,8 +21,7 @@ class Register extends React.Component{
 
     handleSubmit = (e)=>{
      e.preventDefault()
-    const redirect=()=>{
-     
+    const redirect=()=>{     
         return this.props.history.push('/login')
     }
      this.props.dispatch(startPostUser(this.state,redirect))    

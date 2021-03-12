@@ -13,23 +13,18 @@ class Employees extends React.Component{
     }
 
      handleShow = (id) =>{
-        const redirect=()=>{
-     
+        const redirect=()=>{     
             return this.props.history.push(`/employees/${this.props.employee._id}`)
         }
         this.props.dispatch(startShowEmployee(id,redirect)) 
-
     }
 
      handleRemove = (id) =>{
-        this.props.dispatch(startDeleteEmployee(id))
-        
+        this.props.dispatch(startDeleteEmployee(id))        
     }
      
     render(){
-        console.log(this.props.employees)
-    return(
-    
+    return(    
         <div>
         <h3> Employees - {this.props.employees.length} </h3>
         <table border='1' >
@@ -41,8 +36,7 @@ class Employees extends React.Component{
                     <th> Mobile</th>
                     <th> Department</th>
                     <th> Actions</th>
-                    <th> Remove</th>
-  
+                    <th> Remove</th>  
                 </tr>
             </thead>
 
@@ -70,21 +64,15 @@ class Employees extends React.Component{
         </table>
         
         <Link to={`/employees/new`} >Add Employee</Link> 
-
-
         </div>
     )
-
- }
-
-    
+ }    
 }
+
 const mapStateToProps = (state) => {
     return {
         employees:state.employees,
-        employee : state.employee
-        
-        
+        employee : state.employee        
     }
 }
 
