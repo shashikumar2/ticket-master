@@ -1,9 +1,6 @@
 import React from 'react'
-import axios from 'axios'
-import {Link} from 'react-router-dom'
 import { connect } from 'react-redux'
 import { startPutTicket } from './actions/ticketAddAction'
-import {Redirect } from 'react-router-dom'
 
 class TicketEdit extends React.Component{
     constructor(props){
@@ -15,7 +12,6 @@ class TicketEdit extends React.Component{
             employee : props.ticket.employee,
             priority : props.ticket.priority,
             message : props.ticket.message,
-
         }
     }
 
@@ -32,33 +28,32 @@ class TicketEdit extends React.Component{
     handleSubmit = (e)=>{
      e.preventDefault()
      console.log(this.state)
-    const redirect=()=>{
-     
-        return this.props.history.push(`/tickets/${this.props.ticket._id}`)
+        const redirect=()=>{     
+            return this.props.history.push(`/tickets/${this.props.ticket._id}`)
+        }
+
+        const customerTemp = this.props.customers.find(cust=> cust.name === this.state.customer)
+        const departmentTemp = this.props.departments.find(dept=> dept.name === this.state.department)
+        const employees = this.props.employees.filter(emp => emp.department.name === this.state.department)
+        const res =employees.map(emp=>emp._id)
+            const result = []
+
+            for(const ele of res) {
+                result.push({"_id" : ele})
+            }
+                console.log('result', result)
+
+        const ticketData ={
+            "code" : this.state.code,
+            "customer" : customerTemp._id,        
+            "department" : departmentTemp._id,
+            "employees" : result,
+            "priority" : this.state.priority,
+            "message" :  this.state.message
+        }
+        console.log('ticketEdit', ticketData)
+        this.props.dispatch(startPutTicket(this.props.ticket._id, ticketData,redirect))    
     }
-
-     const customerTemp = this.props.customers.find(cust=> cust.name === this.state.customer)
-     const departmentTemp = this.props.departments.find(dept=> dept.name === this.state.department)
-     const employees = this.props.employees.filter(emp => emp.department.name === this.state.department)
-     const res =employees.map(emp=>emp._id)
-         const result = []
-
-         for(const ele of res) {
-             result.push({"_id" : ele})
-         }
-            console.log('result', result)
-
-    const ticketData ={
-        "code" : this.state.code,
-        "customer" : customerTemp._id,        
-        "department" : departmentTemp._id,
-        "employees" : result,
-        "priority" : this.state.priority,
-        "message" :  this.state.message
-    }
-    console.log('ticketEdit', ticketData)
-     this.props.dispatch(startPutTicket(this.props.ticket._id, ticketData,redirect))    
-}
 
     render(){
         const employees = this.props.employees.filter(emp => emp.department.name === this.state.department)
@@ -171,9 +166,9 @@ const mapStateToProps = (state) => {
         customers : state.customers,
         departments:state.departmentsGet,
         employees : state.employees,
-        ticket : state.ticket
-                
+        ticket : state.ticket                
     }
 }
+
 export default connect(mapStateToProps)(TicketEdit)
 

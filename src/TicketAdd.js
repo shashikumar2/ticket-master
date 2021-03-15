@@ -1,9 +1,6 @@
 import React from 'react'
-import axios from 'axios'
-import {Link} from 'react-router-dom'
 import { connect } from 'react-redux'
 import { startPostTicket } from './actions/ticketAddAction'
-import {Redirect } from 'react-router-dom'
 
 class TicketAdd extends React.Component{
     constructor(){
@@ -15,7 +12,6 @@ class TicketAdd extends React.Component{
             employee : '',
             priority : '',
             message : ''
-
         }
     }
 
@@ -102,7 +98,7 @@ class TicketAdd extends React.Component{
                      <br/>
                      <br/>
 
-                     <label htmlFor= 'employee'>employee</label>   
+                    <label htmlFor= 'employee'>employee</label>   
                     <select  id ='employee' name = 'employee' value={this.state.employee} onChange={this.handleChange}>
                         <option value =''>--select--</option>
                         {
@@ -160,7 +156,6 @@ class TicketAdd extends React.Component{
                                        <label htmlFor='priorityL' value= 'low'>low</label> <br/> <br/>
 
                     <input type ='submit' value='Submit' />
-
                     </form>
                 </div>
         )
@@ -171,9 +166,9 @@ const mapStateToProps = (state) => {
     return {
         customers : state.customers,
         departments:state.departmentsGet,
-        employees : state.employees
-                
+        employees : state.employees                
     }
 }
+
 export default connect(mapStateToProps)(TicketAdd)
 
