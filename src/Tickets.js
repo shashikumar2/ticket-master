@@ -93,8 +93,7 @@ class Tickets extends React.Component{
                                     <td>
                                     <input type="checkbox" checked={ticket.isResolved} onChange={() => {
                                                             this.handleComplete(ticket)
-                                                        }} /> 
-                                                                            
+                                                        }} />                                                                             
                                     </td>                             
                                 </tr>                 
                         )
@@ -106,7 +105,7 @@ class Tickets extends React.Component{
             )}
 
             { this.state.status && (
-                            <div>
+                    <div>
                     <table border='1' >
                         <thead>
                             <tr>
@@ -118,11 +117,9 @@ class Tickets extends React.Component{
                                 <th> Priority</th>
                                 <th> Actions</th>
                                 <th> Remove</th>
-                                <th> Complete</th>
-            
+                                <th> Complete</th>            
                             </tr>
                         </thead>
-
                         <tbody>               
                             {
                             ticketsCompleted.map((ticket,i) =>{
@@ -143,8 +140,7 @@ class Tickets extends React.Component{
                                             <td>
                                             <input type="checkbox" checked={ticket.isResolved} onChange={() => {
                                                                     this.handleComplete(ticket)
-                                                                }} /> 
-                                                                                    
+                                                                }} />                                                                                     
                                             </td>                             
                                         </tr>                 
                                 )
@@ -160,7 +156,6 @@ class Tickets extends React.Component{
         <br/> 
         <h3>Completed Tickets: {percentTicketsCompleted}% </h3>
         <progress value={percentTicketsCompleted} max='100' > 32% </progress>
-
         </div> ) : (
                         <p> loading....</p>
                     )
