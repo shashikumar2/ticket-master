@@ -7,7 +7,6 @@ class CustomerShow extends React.Component{
         super()
         this.state = {
             status:'1'
-
         }
     }   
 
@@ -26,7 +25,7 @@ class CustomerShow extends React.Component{
 
     handleCompleted =() => {
         this.setState({
-        status : '3'
+           status : '3'
         })
     }
                                
@@ -48,34 +47,33 @@ class CustomerShow extends React.Component{
                    <div>
                 {
                 tickets.map((ticket,i) =>{
-                return(
-
-                <table border='1' >
-                 <tbody>
-                           <tr >                                
-                                <td>Code Number - {ticket.code}</td>
-                            </tr>                 
-                            <tr >                                
-                                <td>Customer - {this.props.customers.find(cust=>cust._id ===ticket.customer).name}</td>
-                            </tr> 
-                            <tr> 
-                                <td>Department - {this.props.departments.find(dept=>dept._id ===ticket.department).name}</td>
-                            </tr> 
-                            <tr >
-                                <td> Employees - {(this.props.employees.find(emp=>emp._id ===ticket.employees[0]._id)).name}</td> 
-                            </tr>    
-                            <tr >
-                                <td>Message - {ticket.message}</td> 
-                            </tr>    
-                            <tr >
-                                <td>Priority -  {ticket.priority}</td>                                                            
-                            </tr>                                     
-                 </tbody>
-                </table> 
-                )
+                    return(
+                        <table border='1' >
+                        <tbody>
+                                    <tr>                                
+                                        <td>Code Number - {ticket.code}</td>
+                                    </tr>                 
+                                    <tr>                                
+                                        <td>Customer - {this.props.customers.find(cust=>cust._id ===ticket.customer).name}</td>
+                                    </tr> 
+                                    <tr> 
+                                        <td>Department - {this.props.departments.find(dept=>dept._id ===ticket.department).name}</td>
+                                    </tr> 
+                                    <tr>
+                                        <td> Employees - {(this.props.employees.find(emp=>emp._id ===ticket.employees[0]._id)).name}</td> 
+                                    </tr>    
+                                    <tr>
+                                        <td>Message - {ticket.message}</td> 
+                                    </tr>    
+                                    <tr>
+                                        <td>Priority -  {ticket.priority}</td>                                                            
+                                    </tr>                                     
+                        </tbody>
+                        </table> 
+                    )
                 }) 
                 }
-         </div>
+                </div>
          )}
 
        { this.state.status=== '2' && (
@@ -89,61 +87,61 @@ class CustomerShow extends React.Component{
                            <tr >                                
                                 <td>Code Number - {ticket.code}</td>
                             </tr>                 
-                            <tr >                                
+                            <tr>                                
                                 <td>Customer - {this.props.customers.find(cust=>cust._id ===ticket.customer).name}</td>
                             </tr> 
                             <tr> 
                                 <td>Department - {this.props.departments.find(dept=>dept._id ===ticket.department).name}</td>
                             </tr> 
-                            <tr >
+                            <tr>
                                 <td> Employees - {(this.props.employees.find(emp=>emp._id ===ticket.employees[0]._id)).name}</td> 
                             </tr>    
-                            <tr >
+                            <tr>
                                 <td>Message - {ticket.message}</td> 
                             </tr>    
-                            <tr >
+                            <tr>
                                 <td>Priority -  {ticket.priority}</td>                                                            
                             </tr>                                     
             </tbody>
         </table> 
            )
          }) 
-        }
+        
         </div>
         )}
 
-{ this.state.status=== '3' && (
-                <div>
-                {
-                ticketsCompleted.map((ticket,i) =>{
-                return(
-                <table border='1' >               
-                    <tbody>
-                           <tr >                                
-                                <td>Code Number - {ticket.code}</td>
-                            </tr>                 
-                            <tr >                                
-                                <td>Customer - {this.props.customers.find(cust=>cust._id ===ticket.customer).name}</td>
-                            </tr> 
-                            <tr> 
-                                <td>Department - {this.props.departments.find(dept=>dept._id ===ticket.department).name}</td>
-                            </tr> 
-                            <tr >
-                                <td> Employees - {(this.props.employees.find(emp=>emp._id ===ticket.employees[0]._id)).name}</td> 
-                            </tr>    
-                            <tr >
-                                <td>Message - {ticket.message}</td> 
-                            </tr>    
-                            <tr >
-                                <td>Priority -  {ticket.priority}</td>                                                            
-                            </tr>                                     
-                    </tbody>
-                </table> 
-               )
-         }) 
-        }
-        </div>
-        )}
+        { this.state.status=== '3' && (
+                        <div>
+                        {
+                        ticketsCompleted.map((ticket,i) =>{
+                        return(
+                        <table border='1' >               
+                            <tbody>
+                                <tr>                                
+                                        <td>Code Number - {ticket.code}</td>
+                                    </tr>                 
+                                    <tr>                                
+                                        <td>Customer - {this.props.customers.find(cust=>cust._id ===ticket.customer).name}</td>
+                                    </tr> 
+                                    <tr> 
+                                        <td>Department - {this.props.departments.find(dept=>dept._id ===ticket.department).name}</td>
+                                    </tr> 
+                                    <tr>
+                                        <td> Employees - {(this.props.employees.find(emp=>emp._id ===ticket.employees[0]._id)).name}</td> 
+                                    </tr>    
+                                    <tr>
+                                        <td>Message - {ticket.message}</td> 
+                                    </tr>    
+                                    <tr>
+                                        <td>Priority -  {ticket.priority}</td>                                                            
+                                    </tr>                                     
+                            </tbody>
+                        </table> 
+                    )
+                }) 
+                }
+                </div>
+                )}
         </div>
         )
     }

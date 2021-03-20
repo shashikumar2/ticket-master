@@ -7,12 +7,12 @@ import {Redirect } from 'react-router-dom'
 class TicketShow extends React.Component{
 
     render(){
-        console.log("ticketShow",this.props.ticket)
+        console.log("ticketShow", this.props.ticket)
         return (
             <div>                
                 <h2>Code Number - {this.props.ticket.code} </h2>
                 <table border='1' >
-                 <tbody>                
+                  <tbody>                
                             <tr >                                
                                 <td>Customer - {this.props.customers.find(cust=>cust._id ===this.props.ticket.customer).name}</td>
                             </tr> 
@@ -28,7 +28,7 @@ class TicketShow extends React.Component{
                             <tr >
                                 <td>Priority -  {this.props.ticket.priority}</td>                                                            
                             </tr>                              
-                  </tbody>
+                   </tbody>
                 </table>
 
                 <Link to={`/tickets/edit/${this.props.ticket._id}`} >Edit</Link> 

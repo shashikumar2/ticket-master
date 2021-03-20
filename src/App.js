@@ -23,7 +23,6 @@ import TicketShow from './TicketShow'
 import TicketEdit from './TicketEdit'
 
 import { startDeleteUserLogout } from './actions/userLoginAction'
-
 import {connect} from 'react-redux'
 import { BrowserRouter, Route, Link } from 'react-router-dom'
 
@@ -63,14 +62,12 @@ function App(props) {
             <Link to="/tickets">Tickets |</Link>
             <Link to="#"  onClick={handleLogout}>Logout </Link>
             
-
             <Route path="/" component={Home} exact={true} />
             <Route path="/customers" component={Customers} exact={true} />
             <Route path="/departments" component={Departments} exact={true} />
             <Route path="/employees" component={Employees} exact={true} />
             <Route path="/tickets" component={Tickets} exact={true} />
             
-
             <Route path="/customers/new" component={CustomersAdd} />
             <Route path={`/customers/${props.customer._id}`} component={CustomerShow} />
             <Route path={`/customers/edit/${props.customer._id}`} component={CustomerEdit} />
@@ -89,12 +86,11 @@ function App(props) {
             </div>
 
             )}
-
-
             </div>
         </BrowserRouter>
     )
 }
+
 const mapStateToProps = (state) => {
     return {
         loginStatus:state.loginStatus,
